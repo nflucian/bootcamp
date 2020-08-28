@@ -1,12 +1,11 @@
-package ro.neghina.bootcamp.spark.dataloader
+package ro.neghina.spark
 
 import org.apache.spark.sql.DataFrame
-import org.apache.spark.sql.functions._
-import ro.neghina.bootcamp.spark.contexts.EntityContext
-import ro.neghina.bootcamp.spark.dataloader.MoveApp.MyDataFrame
+import org.apache.spark.sql.functions.current_timestamp
+import ro.neghina.bootcamp.contexts.EntityContext
+import ro.neghina.bootcamp.dataloader.MoveApp.MyDataFrame
 
-object AuditHelper {
-
+package object implicits {
   implicit class RichDataFrame(df: MyDataFrame) {
     def audit(implicit context: EntityContext): MyDataFrame = {
       df.withColumn(context.entity, current_timestamp())
@@ -16,5 +15,4 @@ object AuditHelper {
       context.mapping.foldLeft(df){(acc, c) => acc.withColumnRenamed(c._1, c._2) }
     }
   }
-
 }

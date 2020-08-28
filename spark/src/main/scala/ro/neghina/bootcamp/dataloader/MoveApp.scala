@@ -1,13 +1,13 @@
-package ro.neghina.bootcamp.spark.dataloader
+package ro.neghina.bootcamp.dataloader
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import pureconfig.ConfigSource
-import ro.neghina.bootcamp.spark.SparkApp
-import ro.neghina.bootcamp.spark.contexts.EntityContext
 import org.apache.spark.sql.functions._
 import pureconfig._
 import pureconfig.generic.auto._
-import AuditHelper._
+import ro.neghina.bootcamp.contexts.EntityContext
+import ro.neghina.spark.implicits._
+import ro.neghina.spark.SparkApp
 
 object MoveApp extends SparkApp[EntityContext, Unit] {
   type MyDataFrame = DataFrame

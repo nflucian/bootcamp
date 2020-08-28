@@ -1,12 +1,12 @@
-package ro.neghina.bootcamp.spark.daatloader
+package ro.neghina.bootcamp.daatloader
 
 import com.holdenkarau.spark.testing.DataFrameSuiteBase
 import org.apache.calcite.avatica.ColumnMetaData.StructType
 import org.scalatest.FlatSpec
-import ro.neghina.bootcamp.spark.contexts.EntityContext
-import ro.neghina.bootcamp.spark.dataloader.AuditHelper._
+import ro.neghina.spark.implicits._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types.{DataTypes, StructField}
+import ro.neghina.bootcamp.contexts.EntityContext
 
 class AuditHelperSpec extends FlatSpec with DataFrameSuiteBase {
   import spark.implicits._

@@ -32,6 +32,12 @@
             <version>0.13.0</version>
         </dependency>
         <dependency>
+            <groupId>com.github.scopt</groupId>
+            <artifactId>scopt_${scala.binary.version}</artifactId>
+            <version>4.0.0-RC2</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.tupol</groupId>
             <artifactId>spark-utils_${scala.binary.version}</artifactId>
             <version>0.4.1</version>

@@ -1,4 +1,4 @@
-package ro.neghina.bootcamp.spark
+package ro.neghina.spark
 
 import org.apache.spark.sql.SparkSession
 
