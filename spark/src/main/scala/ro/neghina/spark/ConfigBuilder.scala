@@ -13,11 +13,10 @@ trait ConfigBuilder extends Logging {
     val literalConfiguration: Option[ConfigObjectSource] = conf.literalConf.map(l => ConfigSource.string(l))
     val urlConfiguration: Option[ConfigObjectSource] = conf.url.map(u => ConfigSource.url(u))
 
-    val configurationSources: Seq[Option[ConfigObjectSource]] = Seq(literalConfiguration, urlConfiguration)
+    val configurationSources = Seq(literalConfiguration, urlConfiguration, Some(ConfigSource.default))
 
     val confObj = configurationSources.collect{ case Some(config) => config }
       .fold(ConfigSource.empty)((x, y) => x.withFallback(y))
-      .withFallback(ConfigSource.default)
 
     conf.namespace
       .map(n => confObj.at(n))

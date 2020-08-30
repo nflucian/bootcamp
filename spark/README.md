@@ -23,7 +23,7 @@ submit:
   --conf <key>=<value> \
   ... # other options
   <application-jar> \
-  -j JobName \
+  -j EventsJobName \
   -n events \
   -u http://localhost:3000/conf \
   -l "{events: {input = gcs://bucket/input/file.avro}"
