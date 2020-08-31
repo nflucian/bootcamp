@@ -1,4 +1,4 @@
-package ro.neghina.spark
+package ro.esolutions.spark
 
 import org.apache.spark.sql.SparkSession
 

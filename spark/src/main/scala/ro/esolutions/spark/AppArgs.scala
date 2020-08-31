@@ -1,8 +1,10 @@
-package ro.neghina.spark
+package ro.esolutions.spark
 
 import java.net.URL
-import scala.util.Try
+
 import scopt.OParser
+
+import scala.util.Try
 
 case class AppArgs(appName: String = "",
                    namespace: Option[String] = None,
